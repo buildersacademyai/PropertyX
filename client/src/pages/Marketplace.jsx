@@ -22,7 +22,7 @@ import { request, openContractCall } from '@stacks/connect';
 
 
 const Marketplace = () => {
-  const { connected, stxAddress, callContract, getNftData, getAssetData, getMarketplaceListings, fetchIpfsMetadata, openContractCall } = useWallet();
+  const { connected, stxAddress, getConnect } = useWallet();
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState('browse');
   const [showListModal, setShowListModal] = useState(false);
@@ -44,6 +44,10 @@ const Marketplace = () => {
 
   const MARKETPLACE_CONTRACT_NAME = 'marketplace';
   const MARKETPLACE_CONTRACT_NAME_FULFILL = 'marketplace-fulfill';
+
+  const handleConnect = () => {
+    getConnect();
+  };
 
   const getFtImageUrl = async (ftContractAddress, ftContractName) => {
       try {
@@ -571,7 +575,7 @@ const Marketplace = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-2">Connect Your Wallet</h3>
               <p className="text-gray-300 mb-6">Connect your Stacks wallet to browse and purchase NFTs.</p>
-              <Button className="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-400 hover:to-purple-500 text-white px-6 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:shadow-primary/30">
+              <Button  className="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-400 hover:to-purple-500 text-white px-6 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:shadow-primary/30" onClick={handleConnect}>
                 Connect Wallet
               </Button>
             </div>
@@ -703,7 +707,7 @@ const Marketplace = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-2">Connect Your Wallet</h3>
               <p className="text-gray-300 mb-6">Connect your Stacks wallet to view your APTs.</p>
-              <Button className="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-400 hover:to-purple-500 text-white px-6 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:shadow-primary/30">
+              <Button className="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-400 hover:to-purple-500 text-white px-6 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:shadow-primary/30" onClick={handleConnect}>
                 Connect Wallet
               </Button>
             </div>
@@ -774,7 +778,7 @@ const Marketplace = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-2">Connect Your Wallet</h3>
               <p className="text-gray-300 mb-6">Connect your Stacks wallet to view your listings.</p>
-              <Button className="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-400 hover:to-purple-500 text-white px-6 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:shadow-primary/30">
+              <Button className="bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-400 hover:to-purple-500 text-white px-6 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:shadow-primary/30" onClick={handleConnect}>
                 Connect Wallet
               </Button>
             </div>
