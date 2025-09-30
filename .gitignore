@@ -1,0 +1,14 @@
+# Frontend ignores
+frontend/PropertX/node_modules/
+frontend/PropertX/dist/
+frontend/PropertX/.env
+
+
+# Smartcontract ignores
+smartContract/testContract/node_modules/
+smartContract/testContract/build/
+
+
+# Common ignores
+.env
+*.log
