@@ -1,0 +1,24 @@
+{
+    "name": "Scoping for fulfill listing using stx",
+    "uuid": "f03aad4b-41e4-4fbb-87c0-dba604248d57",
+    "chain": "stacks",
+    "version": 1,
+    "networks": {
+      "devnet": {
+        "if_this": {
+          "scope": "contract_call",
+          "method": "fulfil-listing-ft-stx",
+          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.marketplace-fulfill"
+        },
+        "then_that": {
+          "http_post": {
+            "url": "http://localhost:3000/api/fulfill-listing-stx",
+            "authorization_header": ""
+          }
+        },
+        "start_block": 0,
+        "decode_clarity_values": true
+      }
+    }
+  }
+  
